@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
-import { AppContext } from '../../context/AddContext'
 import { NavLink } from 'react-router-dom'
 import { assets } from '../../assets/assets'
+import { AppContext } from './../../Context/AddContext';
 
 const Sidebar = () => {
   const { isEducator } = useContext(AppContext)
