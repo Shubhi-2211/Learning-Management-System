@@ -103,7 +103,6 @@ export const updateUserCourseProgress = async (req, res) => {
       progressData.lectureCompleted.push(lectureId);
       await progressData.save();
 
-      res.json({ success: true, message: 'Lecture progress updated' });
     } else {
         await CourseProgress.create({
             userId,

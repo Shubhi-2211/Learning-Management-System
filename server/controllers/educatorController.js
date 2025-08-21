@@ -62,7 +62,6 @@ export const getEducatorDashboard = async (req, res) => {
     const educator = req.auth.userId;
     const courses = await Course.find({ educator });
     const totalCourses = courses.length;
-
     const courseIds = courses.map(course => course._id);
 
     // Calculate total earnings from purchases
@@ -111,7 +110,7 @@ export const getEnrolledStudentsData = async (req, res) => {
       courseTitle:purchase.courseId.courseTitle,
       purchaseDate:purchase.createdAt
     }))
-    res.json({status: true, enrolledStudents});
+    res.json({success: true, enrolledStudents});
     
   } catch (error) {
     res.json({ success: false, message: error.message });
